@@ -1,0 +1,170 @@
+/**
+ * Neiki's Code Editor - External CSS Override File
+ * 
+ * This file is OPTIONAL. The editor works without it (styles are built-in).
+ * Load this file to customize or override the default editor theme.
+ *
+ * Usage:
+ *   <link rel="stylesheet" href="neiki-code-editor.css">
+ *   <script src="neiki-code-editor.js"></script>
+ *
+ * Since the editor uses Shadow DOM, these styles must be applied via CSS custom
+ * properties (CSS variables) on the host element, which pierce the shadow boundary.
+ *
+ * Example customization:
+ *   neiki-code-editor {
+ *     --nce-bg: #282c34;
+ *     --nce-fg: #abb2bf;
+ *     font-size: 15px;
+ *   }
+ */
+
+/* =========================================================================
+ * Base host styling
+ * ========================================================================= */
+
+neiki-code-editor {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+/* =========================================================================
+ * Dark Theme Overrides (Catppuccin Mocha — default)
+ * Apply these variables to customize the dark theme.
+ * ========================================================================= */
+
+neiki-code-editor[theme="dark"],
+neiki-code-editor:not([theme]) {
+  --nce-bg: #1e1e2e;
+  --nce-gutter-bg: #181825;
+  --nce-gutter-fg: #585b70;
+  --nce-fg: #cdd6f4;
+  --nce-cursor: #f5e0dc;
+  --nce-selection: rgba(137,180,250,0.25);
+  --nce-line-hl: rgba(255,255,255,0.04);
+  --nce-border: #313244;
+  --nce-toolbar-bg: #181825;
+  --nce-toolbar-fg: #a6adc8;
+  --nce-toolbar-hover: #313244;
+  --nce-scrollbar: rgba(166,173,200,0.18);
+  --nce-scrollbar-hover: rgba(166,173,200,0.32);
+  --nce-search-bg: #313244;
+  --nce-search-fg: #cdd6f4;
+  --nce-search-match: rgba(249,226,175,0.3);
+  --nce-minimap-bg: #181825;
+
+  /* Syntax tokens */
+  --nce-keyword: #cba6f7;
+  --nce-string: #a6e3a1;
+  --nce-number: #fab387;
+  --nce-comment: #6c7086;
+  --nce-function: #89b4fa;
+  --nce-operator: #89dceb;
+  --nce-tag: #f38ba8;
+  --nce-attr-name: #fab387;
+  --nce-attr-value: #a6e3a1;
+  --nce-property: #89b4fa;
+  --nce-punctuation: #9399b2;
+  --nce-selector: #f9e2af;
+  --nce-variable: #f5c2e7;
+  --nce-heading: #89b4fa;
+  --nce-bold: #f5e0dc;
+  --nce-italic: #f5c2e7;
+  --nce-link: #89b4fa;
+  --nce-code-bg: rgba(49,50,68,0.6);
+}
+
+/* =========================================================================
+ * Light Theme Overrides (Catppuccin Latte)
+ * ========================================================================= */
+
+neiki-code-editor[theme="light"] {
+  --nce-bg: #eff1f5;
+  --nce-gutter-bg: #e6e9ef;
+  --nce-gutter-fg: #8c8fa1;
+  --nce-fg: #4c4f69;
+  --nce-cursor: #dc8a78;
+  --nce-selection: rgba(114,135,253,0.2);
+  --nce-line-hl: rgba(0,0,0,0.04);
+  --nce-border: #ccd0da;
+  --nce-toolbar-bg: #e6e9ef;
+  --nce-toolbar-fg: #5c5f77;
+  --nce-toolbar-hover: #ccd0da;
+  --nce-scrollbar: rgba(76,79,105,0.15);
+  --nce-scrollbar-hover: rgba(76,79,105,0.3);
+  --nce-search-bg: #ccd0da;
+  --nce-search-fg: #4c4f69;
+  --nce-search-match: rgba(223,142,29,0.25);
+  --nce-minimap-bg: #e6e9ef;
+
+  --nce-keyword: #8839ef;
+  --nce-string: #40a02b;
+  --nce-number: #fe640b;
+  --nce-comment: #9ca0b0;
+  --nce-function: #1e66f5;
+  --nce-operator: #04a5e5;
+  --nce-tag: #d20f39;
+  --nce-attr-name: #fe640b;
+  --nce-attr-value: #40a02b;
+  --nce-property: #1e66f5;
+  --nce-punctuation: #6c6f85;
+  --nce-selector: #df8e1d;
+  --nce-variable: #ea76cb;
+  --nce-heading: #1e66f5;
+  --nce-bold: #dc8a78;
+  --nce-italic: #ea76cb;
+  --nce-link: #1e66f5;
+  --nce-code-bg: rgba(204,208,218,0.5);
+}
+
+/* =========================================================================
+ * Sizing helpers (optional utility classes)
+ * ========================================================================= */
+
+neiki-code-editor.small {
+  min-height: 100px;
+  max-height: 250px;
+  font-size: 12px;
+}
+
+neiki-code-editor.medium {
+  min-height: 200px;
+  max-height: 500px;
+  font-size: 14px;
+}
+
+neiki-code-editor.large {
+  min-height: 400px;
+  max-height: none;
+  font-size: 15px;
+}
+
+/* =========================================================================
+ * Custom theme example: "One Dark" (uncomment to use)
+ * ========================================================================= */
+
+/*
+neiki-code-editor.one-dark {
+  --nce-bg: #282c34;
+  --nce-gutter-bg: #21252b;
+  --nce-gutter-fg: #495162;
+  --nce-fg: #abb2bf;
+  --nce-cursor: #528bff;
+  --nce-selection: rgba(82,139,255,0.2);
+  --nce-border: #3e4451;
+  --nce-keyword: #c678dd;
+  --nce-string: #98c379;
+  --nce-number: #d19a66;
+  --nce-comment: #5c6370;
+  --nce-function: #61afef;
+  --nce-operator: #56b6c2;
+  --nce-tag: #e06c75;
+  --nce-attr-name: #d19a66;
+  --nce-attr-value: #98c379;
+  --nce-property: #61afef;
+  --nce-punctuation: #abb2bf;
+}
+*/

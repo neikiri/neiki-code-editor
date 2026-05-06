@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neiki's Code Editor - Demo</title>
+
+  <!-- CDN build — includes JavaScript and default CSS in one file -->
+  <script src="https://cdn.neiki.eu/neiki-code-editor/neiki-code-editor.min.js"></script>
+
+  <style>
+    /* Demo page styles */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #0f0f1a;
+      color: #e0e0f0;
+      line-height: 1.6;
+    }
+
+    .demo-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      background: linear-gradient(135deg, #cba6f7, #89b4fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: #a0a0c0;
+      margin: 0 0 40px;
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin: 48px 0 12px;
+      color: #cba6f7;
+      font-weight: 600;
+    }
+
+    p {
+      color: #a0a0c0;
+      margin: 0 0 16px;
+    }
+
+    neiki-code-editor {
+      margin-bottom: 32px;
+      height: 320px;
+    }
+
+    .api-demo {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .api-demo button {
+      background: #313244;
+      color: #cdd6f4;
+      border: 1px solid #45475a;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .api-demo button:hover {
+      background: #45475a;
+    }
+
+    .output {
+      background: #181825;
+      border: 1px solid #313244;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-family: 'Consolas', monospace;
+      font-size: 13px;
+      color: #a6e3a1;
+      margin-bottom: 32px;
+      min-height: 40px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    footer {
+      text-align: center;
+      color: #585b70;
+      padding: 40px 0 20px;
+      font-size: 13px;
+    }
+    .heading-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .app-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      white-space: nowrap;
+      color: #58A6FF;
+      font-family: "JetBrains Mono", monospace;
+      transform: translateY(2px);
+    }
+    .logo-img {
+      display: block;
+    }
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      color: #cdd6f4;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    }
+    .github-btn:hover {
+      background: #21262d;
+      border-color: #58A6FF;
+      transform: translateY(-1px);
+    }
+    @media (max-width: 520px) {
+      .app-title {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+
+    <div class="heading-wrap">
+      <img src="/img/icon.png" alt="Logo" class="logo-img" height="32" width="auto">
+      <span class="app-title">Neiki's Code Editor</span>
+      <a class="github-btn" href="https://github.com/neikiri/neiki-code-editor" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repository">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+        </svg>
+      </a>
+    </div>
+    <p class="subtitle">A lightweight embeddable code editor Web Component. No frameworks, no build tools, just one script tag.</p>
+
+    <!-- ==================== Example 1: JavaScript (Dark) ==================== -->
+    <h2>1. JavaScript — Dark Theme</h2>
+    <p>The default editor with syntax highlighting, line numbers, and auto-closing brackets.</p>
+
+    <neiki-code-editor id="editor-js" language="javascript" theme="dark">
+// A simple JavaScript example
+async function fetchUserData(userId) {
+  const API_URL = `https://api.example.com/users/${userId}`;
+
+  try {
+    const response = await fetch(API_URL, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + getToken()
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log('User:', data.name);
+    return data;
+  } catch (error) {
+    console.error('Failed to fetch user:', error.message);
+    return null;
+  }
+}
+
+// Arrow function with array methods
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evenSquares = numbers
+  .filter(n => n % 2 === 0)
+  .map(n => n ** 2);
+
+console.log(evenSquares); // [4, 16, 36, 64, 100]
+</neiki-code-editor>
+
+    <!-- API Demo -->
+    <h2>API Demo</h2>
+    <p>Interact with the editor programmatically using <code>getValue()</code>, <code>setValue()</code>, <code>focus()</code>.</p>
+    <div class="api-demo">
+      <button type="button" data-api-action="get">getValue()</button>
+      <button type="button" data-api-action="set">setValue("// Hello!")</button>
+      <button type="button" data-api-action="focus">focus()</button>
+    </div>
+    <div id="api-output" class="output">Click a button above...</div>
+
+    <!-- ==================== Example 2: HTML (Light) ==================== -->
+    <h2>2. HTML — Light Theme</h2>
+    <p>HTML syntax highlighting with the light Catppuccin Latte theme.</p>
+
+    <neiki-code-editor language="html" theme="light">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Welcome</h1>
+    <p>This is a demo page.</p>
+    <button id="cta" onclick="handleClick()">Get Started</button>
+  </header>
+
+  <main>
+    <section class="features">
+      <div class="card">
+        <img src="icon.svg" alt="Feature 1" />
+        <h3>Fast</h3>
+        <p>Blazing fast performance.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
+</neiki-code-editor>
+
+    <!-- ==================== Example 3: CSS ==================== -->
+    <h2>3. CSS — Dark Theme</h2>
+
+    <neiki-code-editor language="css" theme="dark">
+/* Modern CSS with custom properties */
+:root {
+  --primary: #6c5ce7;
+  --surface: #1e1e2e;
+  --text: #cdd6f4;
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--surface);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1rem;
+  }
+}
+</neiki-code-editor>
+
+    <!-- ==================== Example 4: JSON ==================== -->
+    <h2>4. JSON — Dark Theme (with Format button)</h2>
+    <div class="api-demo">
+      <button onclick="document.getElementById('editor-json').format()">Format JSON</button>
+    </div>
+
+    <neiki-code-editor id="editor-json" language="json" theme="dark">
+{"name":"neiki-code-editor","version":"1.0.0","description":"A lightweight embeddable code editor","keywords":["editor","code","web-component","syntax-highlighting"],"author":{"name":"Neiki","url":"https://example.com"},"features":["syntax-highlighting","line-numbers","themes","search","minimap","fullscreen"],"languages":["javascript","html","css","json","markdown"],"config":{"tabSize":2,"autoCloseBrackets":true,"lineNumbers":true}}
+</neiki-code-editor>
+
+    <!-- ==================== Example 5: Markdown ==================== -->
+    <h2>5. Markdown — Light Theme</h2>
+
+    <neiki-code-editor language="markdown" theme="light">
+# Neiki's Code Editor
+
+A **lightweight** embeddable code editor built as a Web Component.
+
+## Features
+
+- *Syntax highlighting* for multiple languages
+- Line numbers with active line indicator
+- Dark and light themes
+- Search functionality (`Ctrl+F`)
+- Auto-closing brackets
+- Tab indentation
+
+## Quick Start
+
+```html
+<script src="neiki-code-editor.js"></script>
+```
+
+Then use it in your HTML:
+
+```html
+<neiki-code-editor language="javascript" theme="dark">
+  console.log("Hello world");
+</neiki-code-editor>
+```
+
+## API
+
+| Method | Description |
+|--------|-------------|
+| `getValue()` | Returns current code |
+| `setValue(v)` | Sets the code |
+| `focus()` | Focuses the editor |
+| `format()` | Formats JSON content |
+
+> Built with love, zero dependencies.
+
+[View on GitHub](https://github.com/example/neiki-code-editor)
+</neiki-code-editor>
+
+    <!-- ==================== Example 6: Readonly ==================== -->
+    <h2>6. Readonly Mode</h2>
+    <p>The editor is not editable — useful for code snippets and documentation.</p>
+
+    <neiki-code-editor language="javascript" theme="dark" readonly>
+// This editor is readonly — you can't edit this code
+const greeting = "Hello from Neiki's Code Editor!";
+console.log(greeting);
+</neiki-code-editor>
+
+    <!-- ==================== Example 7: Programmatic Creation ==================== -->
+    <h2>7. Programmatic Creation</h2>
+    <p>Created via <code>window.NeikiCodeEditor.create()</code>:</p>
+    <div id="programmatic-target"></div>
+
+    <footer>
+      Neiki's Code Editor v1.0.0 &mdash; Zero dependencies, one script tag.
+    </footer>
+  </div>
+
+  <script>
+    // === API Demo Functions ===
+    const jsEditor = document.getElementById('editor-js');
+    const output = document.getElementById('api-output');
+
+    function demoGetValue() {
+      const val = jsEditor.getValue();
+      output.textContent = 'getValue() returned:\n' + val.slice(0, 200) + (val.length > 200 ? '...' : '');
+    }
+
+    function demoSetValue() {
+      jsEditor.setValue("// Hello from setValue()!\nconsole.log(\"Neiki's Code Editor rocks!\");");
+      output.textContent = 'setValue() called — editor content replaced.';
+    }
+
+    function demoFocus() {
+      jsEditor.focus();
+      output.textContent = 'focus() called — editor is now focused.';
+    }
+
+    document.querySelector('[data-api-action="get"]').addEventListener('click', demoGetValue);
+    document.querySelector('[data-api-action="set"]').addEventListener('click', demoSetValue);
+    document.querySelector('[data-api-action="focus"]').addEventListener('click', demoFocus);
+
+    // Listen for change events
+    jsEditor.addEventListener('change', (e) => {
+      // Uncomment below to log every change:
+      // console.log('Editor changed:', e.detail.value.length, 'chars');
+    });
+
+    // === Programmatic Creation ===
+    const target = document.getElementById('programmatic-target');
+    const dynamicEditor = window.NeikiCodeEditor.create(target, {
+      language: 'javascript',
+      theme: 'dark',
+      value: '// Created programmatically!\nconst editor = window.NeikiCodeEditor.create(container, {\n  language: "javascript",\n  theme: "dark",\n  value: "..."\n});\n\n// You can then use editor.getValue(), editor.setValue(), etc.'
+    });
+  </script>
+</body>
+</html>
