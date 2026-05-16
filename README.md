@@ -32,7 +32,7 @@
 
 ---
 
-**Live version:** [https://neiki.eu/code-editor](https://neiki.eu/code-editor)
+**Live version:** [https://neikiri.dev/code-editor](https://neikiri.dev/code-editor)
 
 ---
 
@@ -61,7 +61,7 @@
 Recommended CDN installation:
 
 ```html
-<script src="https://cdn.neiki.eu/neiki-code-editor/neiki-code-editor.min.js"></script>
+<script src="https://cdn.neikiri.dev/neiki-code-editor/neiki-code-editor.min.js"></script>
 ```
 
 This is the recommended production build. It includes the minified JavaScript and the minified default CSS inside a single file.
@@ -69,14 +69,14 @@ This is the recommended production build. It includes the minified JavaScript an
 You can also use the readable CDN build:
 
 ```html
-<script src="https://cdn.neiki.eu/neiki-code-editor/neiki-code-editor.js"></script>
+<script src="https://cdn.neikiri.dev/neiki-code-editor/neiki-code-editor.js"></script>
 ```
 
 If you want easier theme customization, you can optionally load the external CSS file too:
 
 ```html
-<link rel="stylesheet" href="https://cdn.neiki.eu/neiki-code-editor/neiki-code-editor.css">
-<script src="https://cdn.neiki.eu/neiki-code-editor/neiki-code-editor.js"></script>
+<link rel="stylesheet" href="https://cdn.neikiri.dev/neiki-code-editor/neiki-code-editor.css">
+<script src="https://cdn.neikiri.dev/neiki-code-editor/neiki-code-editor.js"></script>
 ```
 
 Or use a local copy:
@@ -246,4 +246,4 @@ GitHub: https://github.com/neikiri
 
 ## 📬 Contact
 
-📧 Email: dev@neiki.eu
+📧 Email: neikiri@neikiri.dev
