@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <a href="https://sourceforge.net/projects/neiki-editor/files/latest/download"><img alt="Download Neiki&#39;s Editor" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
+  <a href="https://sourceforge.net/projects/neiki-code-editor/files/latest/download"><img alt="Download Neiki&#39;s Code Editor" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
 </p>
 
 <p align="center">
