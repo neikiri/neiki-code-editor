@@ -20,15 +20,16 @@
 </p>
 
 <p align="center">
-  <a href="https://sourceforge.net/projects/neiki-code-editor/files/latest/download"><img alt="Download Neiki&#39;s Code Editor" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/Languages-5%20Supported-3b82f6?style=flat&labelColor=383C43" alt="Languages">
   <img src="https://img.shields.io/badge/Setup-Zero%20Config-22c55e?style=flat&labelColor=383C43" alt="Zero Config">
   <img src="https://img.shields.io/badge/Dependencies-None-f97316?style=flat&labelColor=383C43" alt="No Dependencies">
   <img src="https://img.shields.io/badge/Frameworks-None-ef4444?style=flat&labelColor=383C43" alt="No Frameworks">
 </p>
+
+<p align="center">
+  <a href="https://sourceforge.net/projects/neiki-code-editor/files/latest/download"><img alt="Download Neiki&#39;s Code Editor" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
+</p>
+
 
 ---
 
