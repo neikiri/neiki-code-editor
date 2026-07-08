@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.1] - 2026-07-08
+
+### Fixed
+
+- Fixed a bug in the CSS syntax highlighter where typing a lone `.` (not part of a number or class name) caused an infinite loop, freezing the editor tab.
+
 ## [1.0.0] - 2026-05-06
 
 ### Added

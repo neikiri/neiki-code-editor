@@ -579,7 +579,7 @@ class SyntaxHighlighter {
       }
       // Words (selectors, properties, values)
       else if (/[a-zA-Z_\-.]/.test(code[i])) {
-        let j = i;
+        let j = i + 1;
         while (j < len && /[a-zA-Z0-9_\-]/.test(code[j])) j++;
         const word = code.slice(i, j);
         const cssKw = ['important','inherit','initial','unset','none','auto','block','inline','flex','grid','relative','absolute','fixed','sticky'];
@@ -1516,7 +1516,7 @@ if (!customElements.get('neiki-code-editor')) {
 
 // Expose global API
 window.NeikiCodeEditor = {
-  version: '1.0.0',
+  version: '1.0.1',
   /**
    * Programmatically create an editor instance
    * @param {HTMLElement} container - parent element
