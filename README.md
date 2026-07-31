@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/logo.png" alt="Neiki's Code Editor" width="620">
+  <img src="img/logo.svg" alt="Neiki's Code Editor" style="height: 90px; width: auto;">
 </p>
 
 <h1 align="center">Neiki's Code Editor</h1>
